@@ -1,4 +1,4 @@
-from aimacode.logic import PropKB
+ from aimacode.logic import PropKB
 from aimacode.planning import Action
 from aimacode.search import (
     Node, breadth_first_search, astar_search, depth_first_graph_search,
