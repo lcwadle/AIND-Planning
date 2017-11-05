@@ -7,9 +7,7 @@ import unittest
 from aimacode.utils import expr
 from aimacode.planning import Action
 from example_have_cake import have_cake
-from my_planning_graph import (
-    PlanningGraph, PgNode_a, PgNode_s, mutexify
-)
+from my_planning_graph import (PlanningGraph, PgNode_a, PgNode_s, mutexify)
 
 
 class TestPlanningGraphLevels(unittest.TestCase):

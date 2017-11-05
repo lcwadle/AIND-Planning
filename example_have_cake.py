@@ -1,13 +1,8 @@
- from aimacode.logic import PropKB
+from aimacode.logic import PropKB
 from aimacode.planning import Action
-from aimacode.search import (
-    Node, breadth_first_search, astar_search, depth_first_graph_search,
-    uniform_cost_search, greedy_best_first_graph_search, Problem,
-)
+from aimacode.search import (Node, breadth_first_search, astar_search, depth_first_graph_search,uniform_cost_search, greedy_best_first_graph_search, Problem)
 from aimacode.utils import expr
-from lp_utils import (
-    FluentState, encode_state, decode_state
-)
+from lp_utils import (FluentState, encode_state, decode_state)
 from my_planning_graph import PlanningGraph
 from run_search import run_search
 
