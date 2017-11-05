@@ -404,6 +404,14 @@ class PlanningGraph():
         :return: bool
         """
         # TODO test for Inconsistent Effects between nodes
+        for add_effect in node_a1.action.effect_add:
+            for rem_effect in node_a2.action.effect_rem:
+                if add_effect == rem_effect:
+                    return True
+        for add_effect in node_a2.action.effect_add:
+            for rem_effect in node_a1.action.effect_rem:
+                if add_effect == rem_effect:
+                    return True
         return False
 
     def interference_mutex(self, node_a1: PgNode_a, node_a2: PgNode_a) -> bool:
@@ -420,7 +428,14 @@ class PlanningGraph():
         :param node_a2: PgNode_a
         :return: bool
         """
-        # TODO test for Interference between nodes
+        for rem_effect in node_a1.action.effect_rem:
+            for pos_precond in node_a2.action.precond_pos:
+                if rem_effect == pos_precond:
+                    return True
+        for rem_effect in node_a2.action.effect_rem:
+            for pos_precond in node_a1.action.precond_pos:
+                if rem_effect == pos_precond:
+                    return True
         return False
 
     def competing_needs_mutex(self, node_a1: PgNode_a, node_a2: PgNode_a) -> bool:
